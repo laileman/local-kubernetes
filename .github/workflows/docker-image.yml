@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag lailemon/python:v1
     - name: login dockerhub
-      run: docker login -u $USERNAME -p $PASSWORD
+      run: docker login -u $ {{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
     - name: push to dockerhub
       run: docker push lailemon/python:v1
